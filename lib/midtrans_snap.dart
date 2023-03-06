@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:midtrans_snap/constants.dart';
 import 'package:midtrans_snap/models.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 class MidtransSnap extends StatelessWidget {
   MidtransSnap({
@@ -25,13 +24,6 @@ class MidtransSnap extends StatelessWidget {
   final void Function(MidtransResponse result)? onResponse;
 
   static PlatformWebViewControllerCreationParams _getCreationParams() {
-    if (WebViewPlatform.instance is WebKitWebViewPlatform) {
-      return WebKitWebViewControllerCreationParams(
-        allowsInlineMediaPlayback: true,
-        mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
-      );
-    }
-
     return const PlatformWebViewControllerCreationParams();
   }
 
